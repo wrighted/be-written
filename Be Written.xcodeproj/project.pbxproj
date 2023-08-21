@@ -21,6 +21,7 @@
 		9F1784542A93C174009F2549 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1784532A93C174009F2549 /* Note.swift */; };
 		9F1784562A93C17C009F2549 /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1784552A93C17C009F2549 /* Quote.swift */; };
 		9F17845B2A93C37D009F2549 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 9F17845A2A93C37D009F2549 /* README.md */; };
+		9F17845F2A93C677009F2549 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 9F17845E2A93C677009F2549 /* .gitignore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		9F1784532A93C174009F2549 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		9F1784552A93C17C009F2549 /* Quote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
 		9F17845A2A93C37D009F2549 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		9F17845E2A93C677009F2549 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 		287E8D8F290F1B1B006B606D = {
 			isa = PBXGroup;
 			children = (
+				9F17845E2A93C677009F2549 /* .gitignore */,
 				9F17845A2A93C37D009F2549 /* README.md */,
 				287E8D9A290F1B1B006B606D /* Be Written */,
 				287E8DAB290F1B1D006B606D /* Be WrittenTests */,
@@ -285,6 +288,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F17845F2A93C677009F2549 /* .gitignore in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

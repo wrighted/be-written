@@ -11,11 +11,12 @@ import MapKit
 
 struct TileView: View {
     var coordinate: CLLocationCoordinate2D
-    var data: String
+    var content: String
+    var altText: String = "Some kinda information"
     
     var body: some View {
         HStack {
-            Text("Insert daily writing here")
+            Text(self.content)
                 .font(.headline)
                 .padding()
                 .background(Color.blue)
@@ -26,7 +27,7 @@ struct TileView: View {
             Spacer()
             
             VStack{
-                Text("Some kinda information")
+                Text(self.altText)
                     .font(.headline)
                     .padding()
                     .background(Color.blue)

@@ -7,7 +7,8 @@
 
 import Foundation
 
-struct Quote {
+struct Quote: Codable {
+    var id: Int64?
     var title: String
     var quote: String
 }

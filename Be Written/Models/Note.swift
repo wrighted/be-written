@@ -6,3 +6,12 @@
 //
 
 import Foundation
+import MapKit
+
+struct Note: Codable, Identifiable {
+    var id: Int64?
+    var timestamp: MTLTimestamp
+    var latitude: Double
+    var longitude: Double
+    var content: String
+}

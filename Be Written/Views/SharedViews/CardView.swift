@@ -2,7 +2,7 @@
 //  CardView.swift
 //  Be Written
 //
-//  Created by Jared Webber on 2023-08-21.
+//  Created by Jared Webber on 2023-08-24.
 //
 
 import Foundation

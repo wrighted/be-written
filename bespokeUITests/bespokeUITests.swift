@@ -1,13 +1,13 @@
 //
-//  Be_WrittenUITests.swift
-//  Be WrittenUITests
+//  bespokeUITests.swift
+//  bespokeUITests
 //
 //  Created by Ethan Wright on 2022-10-30.
 //
 
 import XCTest
 
-class Be_WrittenUITests: XCTestCase {
+class bespokeUITests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.

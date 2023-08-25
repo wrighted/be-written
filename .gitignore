@@ -88,3 +88,8 @@ fastlane/test_output
 # https://github.com/johnno1962/injectionforxcode
 
 iOSInjectionProject/
+
+# Things ethan thought might help
+
+bespoke.xcodeproj/project.xcworkspace/xcuserdata
+bespoke.xcodeproj/xcuserdata

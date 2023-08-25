@@ -1,0 +1,10 @@
+# format options
+--indent 4
+--maxwidth 120
+--commas always
+
+# file options
+--exclude Pods
+
+# rules
+--disable elseOnSameLine,semicolons

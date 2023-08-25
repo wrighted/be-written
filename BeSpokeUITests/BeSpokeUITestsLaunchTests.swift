@@ -1,13 +1,13 @@
 //
-//  bespokeUITestsLaunchTests.swift
-//  bespokeUITests
+//  BeSpokeUITestsLaunchTests.swift
+//  BeSpokeUITests
 //
 //  Created by Ethan Wright on 2022-10-30.
 //
 
 import XCTest
 
-class bespokeUITestsLaunchTests: XCTestCase {
+class BeSpokeUITestsLaunchTests: XCTestCase {
 
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true

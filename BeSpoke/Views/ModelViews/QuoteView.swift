@@ -10,7 +10,7 @@ import SwiftUI
 
 struct QuoteView: View {
     var quote: Quote
-    
+
     var body: some View {
         CardView(title: quote.title, content: AnyView(Text(quote.quote)))
     }

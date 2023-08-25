@@ -1,6 +1,6 @@
 //
 //  CardView.swift
-//  bespoke
+//  BeSpoke
 //
 //  Created by Jared Webber on 2023-08-24.
 //
@@ -11,12 +11,12 @@ import SwiftUI
 struct CardView: View {
     var title: String
     var content: AnyView
-    
+
     var body: some View {
         ZStack {
             Color.white
             VStack {
-                HStack{
+                HStack {
                     Text(title)
                         .font(.title)
                         .padding()

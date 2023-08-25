@@ -6,14 +6,14 @@
 //
 
 import Foundation
-import SwiftUI
 import MapKit
+import SwiftUI
 
 struct MapView: View {
     var coordinate: CLLocationCoordinate2D
-    
-    @State private var mapImage: UIImage? = nil
-        
+
+    @State private var mapImage: UIImage?
+
     var body: some View {
         Image(uiImage: mapImage ?? UIImage())
             .resizable()
@@ -22,20 +22,22 @@ struct MapView: View {
                 generateMapImage()
             }
     }
-    
+
     private func generateMapImage() {
         let options = MKMapSnapshotter.Options()
-        options.region = MKCoordinateRegion(center: coordinate, span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05))
+        options.region = MKCoordinateRegion(
+            center: coordinate,
+            span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05))
         options.size = CGSize(width: 300, height: 300)
         options.mapType = .standard
-        
+
         let snapshotter = MKMapSnapshotter(options: options)
-        
+
         snapshotter.start { snapshot, error in
             guard let snapshot = snapshot, error == nil else {
                 return
             }
-            
+
             mapImage = snapshot.image
         }
     }

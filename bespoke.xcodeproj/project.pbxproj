@@ -22,7 +22,7 @@
 		9F1784562A93C17C009F2549 /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1784552A93C17C009F2549 /* Quote.swift */; };
 		9F17845B2A93C37D009F2549 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 9F17845A2A93C37D009F2549 /* README.md */; };
 		9F17845F2A93C677009F2549 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 9F17845E2A93C677009F2549 /* .gitignore */; };
-		9F17846B2A97D16E009F2549 /* FirebaseCodable.md in Resources */ = {isa = PBXBuildFile; fileRef = 9F17846A2A97D16E009F2549 /* FirebaseCodable.md */; };
+		9F17846B2A97D16E009F2549 /* DataOrganization.md in Resources */ = {isa = PBXBuildFile; fileRef = 9F17846A2A97D16E009F2549 /* DataOrganization.md */; };
 		9F17846D2A97D179009F2549 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F17846C2A97D179009F2549 /* User.swift */; };
 		9F17846F2A97D44E009F2549 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F17846E2A97D44E009F2549 /* CardView.swift */; };
 		9F17849C2A984B58009F2549 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 9F17849B2A984B58009F2549 /* .swiftlint.yml */; };
@@ -71,7 +71,7 @@
 		9F1784552A93C17C009F2549 /* Quote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
 		9F17845A2A93C37D009F2549 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		9F17845E2A93C677009F2549 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = SOURCE_ROOT; };
-		9F17846A2A97D16E009F2549 /* FirebaseCodable.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = FirebaseCodable.md; sourceTree = "<group>"; };
+		9F17846A2A97D16E009F2549 /* DataOrganization.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = DataOrganization.md; sourceTree = "<group>"; };
 		9F17846C2A97D179009F2549 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		9F17846E2A97D44E009F2549 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		9F17849B2A984B58009F2549 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
@@ -168,7 +168,7 @@
 		9F1784472A93BF6C009F2549 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				9F17846A2A97D16E009F2549 /* FirebaseCodable.md */,
+				9F17846A2A97D16E009F2549 /* DataOrganization.md */,
 				9F17846C2A97D179009F2549 /* User.swift */,
 				9F1784532A93C174009F2549 /* Note.swift */,
 				9F1784552A93C17C009F2549 /* Quote.swift */,
@@ -312,7 +312,7 @@
 				9F17849C2A984B58009F2549 /* .swiftlint.yml in Resources */,
 				9F1784A52A9853E9009F2549 /* .gitignore in Resources */,
 				9F1784A72A9854D5009F2549 /* .swiftformat in Resources */,
-				9F17846B2A97D16E009F2549 /* FirebaseCodable.md in Resources */,
+				9F17846B2A97D16E009F2549 /* DataOrganization.md in Resources */,
 				9F17845B2A93C37D009F2549 /* README.md in Resources */,
 				287E8DA3290F1B1D006B606D /* Preview Assets.xcassets in Resources */,
 				287E8DA0290F1B1D006B606D /* Assets.xcassets in Resources */,

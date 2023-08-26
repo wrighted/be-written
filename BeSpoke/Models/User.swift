@@ -12,4 +12,8 @@ struct User: Codable {
     var firstName: String
     var lastName: String
     var email: String
+    var profileImage: URL
+    var username: String
+    var lastLogin: Double
+    var accountCreated: Double
 }

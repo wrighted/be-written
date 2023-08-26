@@ -16,31 +16,31 @@ struct ContentView: View {
     let notes: [Note] = [
         Note(
             id: 2,
-            timestamp: UInt64(Date().timeIntervalSince1970),
+            timestamp: Date().timeIntervalSince1970,
             latitude: 37.7749,
             longitude: -122.4194,
             content: "I think I'm the smartest person alive"),
         Note(
             id: 1,
-            timestamp: UInt64(Date().timeIntervalSince1970) - 86400,
+            timestamp: Date().timeIntervalSince1970 - 86400,
             latitude: 37.7749,
             longitude: -122.4194,
             content: "It's So Over"),
         Note(
             id: 3,
-            timestamp: UInt64(Date().timeIntervalSince1970) - (2 * 86400),
+            timestamp: Date().timeIntervalSince1970 - (2 * 86400),
             latitude: 37.7749,
             longitude: -122.4194,
             content: "We're So Back"),
         Note(
             id: 4,
-            timestamp: UInt64(Date().timeIntervalSince1970) - (3 * 86400),
+            timestamp: Date().timeIntervalSince1970 - (3 * 86400),
             latitude: 37.7749,
             longitude: 22.4194,
             content: "I've already run out of content ideas"),
         Note(
             id: 5,
-            timestamp: UInt64(Date().timeIntervalSince1970) - (4 * 86400),
+            timestamp: Date().timeIntervalSince1970 - (4 * 86400),
             latitude: 37.7749,
             longitude: -12.4194,
             content:
@@ -63,8 +63,8 @@ struct ContentView: View {
                         NoteView(note: note)
                     }
                 }
-            }
-            .navigationTitle("BeSpoke")
+            }.navigationTitle("BeSpoke")
+            // Currently ^ this title apears twice at the top of the screen when you scroll down
         }
     }
 }

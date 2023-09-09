@@ -6,14 +6,14 @@
 //
 
 import Foundation
-import SwiftUI
 import MapKit
+import SwiftUI
 
 struct TileView: View {
     var coordinate: CLLocationCoordinate2D
     var content: String
     var altText: String = "Some kinda information"
-    
+
     var body: some View {
         HStack {
             Text(self.content)
@@ -23,17 +23,17 @@ struct TileView: View {
                 .foregroundColor(.white)
                 .cornerRadius(10)
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
-            
+
             Spacer()
-            
-            VStack{
+
+            VStack {
                 Text(self.altText)
                     .font(.headline)
                     .padding()
                     .background(Color.blue)
                     .foregroundColor(.white)
                     .cornerRadius(10)
-                
+
                 MapView(coordinate: coordinate)
                     .font(.headline)
                     .padding()

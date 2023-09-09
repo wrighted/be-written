@@ -1,6 +1,6 @@
 //
-//  bespokeTests.swift
-//  bespokeTests
+//  BeSpokeTests.swift
+//  BeSpokeTests
 //
 //  Created by Ethan Wright on 2022-10-30.
 //
@@ -8,7 +8,7 @@
 import XCTest
 @testable import bespoke
 
-class bespokeTests: XCTestCase {
+class BeSpokeTests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -23,7 +23,8 @@ class bespokeTests: XCTestCase {
         // Use XCTAssert and related functions to verify your tests produce the correct results.
         // Any test you write for XCTest can be annotated as throws and async.
         // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+        // Mark your test async to allow awaiting for asynchronous code to complete.
+        // Check the results with assertions afterwards.
     }
 
     func testPerformanceExample() throws {
@@ -32,5 +33,4 @@ class bespokeTests: XCTestCase {
             // Put the code you want to measure the time of here.
         }
     }
-
 }

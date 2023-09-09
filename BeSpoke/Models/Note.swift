@@ -10,7 +10,7 @@ import MapKit
 
 struct Note: Codable, Identifiable {
     var id: Int64?
-    var timestamp: MTLTimestamp
+    var timestamp: Double
     var latitude: Double
     var longitude: Double
     var content: String

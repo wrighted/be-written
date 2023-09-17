@@ -14,7 +14,6 @@ struct CardView: View {
 
     var body: some View {
         ZStack {
-            Color.white
             VStack {
                 HStack {
                     Text(title)
@@ -22,15 +21,13 @@ struct CardView: View {
                         .padding()
                     Spacer()
                 }
-                content
-                    .padding()
+                content.padding()
                 Spacer()
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .background(.gray)
+            .background(.gray.opacity(0.5))
             .cornerRadius(20)
             .padding()
         }
-        .edgesIgnoringSafeArea(.all)
     }
 }

@@ -73,7 +73,7 @@ jobs:
 
       - run: |
           echo "Run, Build Application using script"
-          /usr/bin/xcodebuild build -project /Users/runner/work/be-written/be-written/bespoke.xcodeproj -target bespoke -scheme bespoke CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO
+          /usr/bin/xcodebuild build -project /Users/runner/work/be-written/be-written/bespoke.xcodeproj -scheme bespoke CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO
 
       - name: Perform CodeQL Analysis
         uses: github/codeql-action/analyze@v2

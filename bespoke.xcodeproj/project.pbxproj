@@ -14,6 +14,9 @@
 		287E8DAD290F1B1D006B606D /* BeSpokeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287E8DAC290F1B1D006B606D /* BeSpokeTests.swift */; };
 		287E8DB7290F1B1D006B606D /* BeSpokeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287E8DB6290F1B1D006B606D /* BeSpokeUITests.swift */; };
 		287E8DB9290F1B1D006B606D /* BeSpokeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287E8DB8290F1B1D006B606D /* BeSpokeUITestsLaunchTests.swift */; };
+		40A164402AB6754500612083 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A1643F2AB6754500612083 /* HeaderView.swift */; };
+		40A164422AB680D400612083 /* TagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A164412AB680D400612083 /* TagView.swift */; };
+		40A164442AB6867F00612083 /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A164432AB6867F00612083 /* Tag.swift */; };
 		9F17844B2A93C001009F2549 /* NoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F17844A2A93C001009F2549 /* NoteView.swift */; };
 		9F17844D2A93C03A009F2549 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F17844C2A93C03A009F2549 /* MapView.swift */; };
 		9F17844F2A93C05B009F2549 /* TileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F17844E2A93C05B009F2549 /* TileView.swift */; };
@@ -63,6 +66,9 @@
 		287E8DB2290F1B1D006B606D /* bespokeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = bespokeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		287E8DB6290F1B1D006B606D /* BeSpokeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeSpokeUITests.swift; sourceTree = "<group>"; };
 		287E8DB8290F1B1D006B606D /* BeSpokeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeSpokeUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		40A1643F2AB6754500612083 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		40A164412AB680D400612083 /* TagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagView.swift; sourceTree = "<group>"; };
+		40A164432AB6867F00612083 /* Tag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
 		9F17844A2A93C001009F2549 /* NoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteView.swift; sourceTree = "<group>"; };
 		9F17844C2A93C03A009F2549 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		9F17844E2A93C05B009F2549 /* TileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileView.swift; sourceTree = "<group>"; };
@@ -172,6 +178,7 @@
 				9F17846C2A97D179009F2549 /* User.swift */,
 				9F1784532A93C174009F2549 /* Note.swift */,
 				9F1784552A93C17C009F2549 /* Quote.swift */,
+				40A164432AB6867F00612083 /* Tag.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -200,6 +207,8 @@
 				9F17846E2A97D44E009F2549 /* CardView.swift */,
 				9F17844C2A93C03A009F2549 /* MapView.swift */,
 				9F17844E2A93C05B009F2549 /* TileView.swift */,
+				40A1643F2AB6754500612083 /* HeaderView.swift */,
+				40A164412AB680D400612083 /* TagView.swift */,
 			);
 			path = SharedViews;
 			sourceTree = "<group>";
@@ -371,6 +380,7 @@
 				287E8D9E290F1B1B006B606D /* ContentView.swift in Sources */,
 				287E8D9C290F1B1B006B606D /* BeSpokeApp.swift in Sources */,
 				9F1784542A93C174009F2549 /* Note.swift in Sources */,
+				40A164402AB6754500612083 /* HeaderView.swift in Sources */,
 				9F17844D2A93C03A009F2549 /* MapView.swift in Sources */,
 				9F17846F2A97D44E009F2549 /* CardView.swift in Sources */,
 				9F1784562A93C17C009F2549 /* Quote.swift in Sources */,
@@ -378,6 +388,8 @@
 				9F17844B2A93C001009F2549 /* NoteView.swift in Sources */,
 				9F1784512A93C080009F2549 /* QuoteView.swift in Sources */,
 				9F17844F2A93C05B009F2549 /* TileView.swift in Sources */,
+				40A164422AB680D400612083 /* TagView.swift in Sources */,
+				40A164442AB6867F00612083 /* Tag.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

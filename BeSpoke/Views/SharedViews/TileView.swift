@@ -18,10 +18,6 @@ struct TileView: View {
         HStack {
             Text(self.content)
                 .font(.headline)
-                .padding()
-                .background(Color.blue)
-                .foregroundColor(.white)
-                .cornerRadius(10)
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
 
             Spacer()
@@ -29,20 +25,11 @@ struct TileView: View {
             VStack {
                 Text(self.altText)
                     .font(.headline)
-                    .padding()
-                    .background(Color.blue)
-                    .foregroundColor(.white)
-                    .cornerRadius(10)
 
                 MapView(coordinate: coordinate)
                     .font(.headline)
-                    .padding()
-                    .background(Color.blue)
-                    .foregroundColor(.white)
-                    .cornerRadius(10)
             }
             .frame(maxWidth: .infinity, alignment: .trailing)
         }
-        .padding()
     }
 }

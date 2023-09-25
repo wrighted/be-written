@@ -21,10 +21,15 @@ struct NoteView: View {
     }()
 
     var note: Note
+    var tags: [Tag]
 
     var body: some View {
+        HeaderView(
+            header: self.getFormattedDateString(),
+            tags: tags
+        )
         CardView(
-            title: self.getFormattedDateString(),
+            title: "Note",
             content: AnyView(
                 TileView(
                     coordinate: CLLocationCoordinate2D(latitude: self.note.latitude, longitude: self.note.longitude),

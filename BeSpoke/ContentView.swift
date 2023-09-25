@@ -52,6 +52,36 @@ struct ContentView: View {
             should probably happen at some point eventually maybe if we ever work on this more
             """)
     ]
+    
+    let tags: [Tag] = [
+        Tag(
+            id: 1,
+            notes: [1, 2],
+            title: "smiley",
+            imagePath: "face.smiling"),
+        Tag(
+            id: 2,
+            notes: [1, 3, 5],
+            title: "sad",
+            imagePath: "hand.thumbsdown"),
+        Tag(
+            id: 3,
+            notes: [2, 3, 4],
+            title: "rainy",
+            imagePath: "cloud"),
+        Tag(id: 4,
+            notes: [4],
+            title: "sunny",
+            imagePath: "sun.min"),
+        Tag(id: 5,
+            notes: [5],
+            title: "mid",
+            imagePath: "stop.fill"),
+        Tag(id: 6,
+            notes: [],
+            title: "best day",
+            imagePath: "music.note")
+    ]
 
     // Real code follows.
     var body: some View {
@@ -60,11 +90,17 @@ struct ContentView: View {
                 QuoteView(quote: quote)
                 LazyVGrid(columns: [GridItem(.flexible())]) {
                     ForEach(notes) { note in
-                        NoteView(note: note)
+                        // This is hopefully not necessary with database
+                        // look-ups
+                        let notesTags = tags.filter { $0.notes.contains(note.id) }
+                        
+                        NoteView(note: note, tags: notesTags)
                     }
                 }
-            }.navigationTitle("BeSpoke")
-            // Currently ^ this title apears twice at the top of the screen when you scroll down
+            }
+            .navigationTitle("Bespoke")
+            .background(Color(red: 0.0, green: 0.1, blue: 0.0))
+            .preferredColorScheme(.dark)
         }
     }
 }

@@ -84,6 +84,9 @@ struct ContentView: View {
     ]
 
     // Real code follows.
+
+    @State private var activeUser: User = getActiveUser()
+
     var body: some View {
         NavigationView {
             ScrollView {
@@ -101,7 +104,7 @@ struct ContentView: View {
             .navigationTitle("Bespoke")
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    NavigationLink(destination: ProfileView()) {
+                    NavigationLink(destination: ProfileView(user: $activeUser)) {
                         Image(systemName: "person.circle")
                             .resizable()
                             .frame(width: 30, height: 30)

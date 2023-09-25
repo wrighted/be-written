@@ -9,26 +9,37 @@ import Foundation
 import SwiftUI
 
 struct ProfileView: View {
-    @State private var firstName = ""
-    @State private var lastName = ""
-    @State private var username = ""
-    private var email = ""
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+
+    @Binding var user: User
+    @State private var firstName: String
+    @State private var lastName: String
+    @State private var username: String
+
+    init(user: Binding<User>) {
+        _user = user
+        _firstName = State(initialValue: user.wrappedValue.firstName ?? "")
+        _lastName = State(initialValue: user.wrappedValue.lastName ?? "")
+        _username = State(initialValue: user.wrappedValue.username ?? "")
+    }
 
     var body: some View {
         Form {
             Section(header: Text("Profile Information")) {
                 TextField("First Name", text: $firstName)
                 TextField("Last Name", text: $lastName)
-                Text(email) // email cant be modified due to oauth
-                TextField("Last Name", text: $username)
-                
+                Text($user.wrappedValue.email ?? "") // Email can't be modified due to OAuth
+                TextField("Username", text: $username)
             }
         }
         .navigationBarTitle("Profile")
         .navigationBarItems(trailing:
             Button(action: {
-                // Save or update the profile information here
-                // You can access firstName, lastName, and email here
+                $user.wrappedValue.firstName = firstName
+                $user.wrappedValue.lastName = lastName
+                $user.wrappedValue.username = username
+                updateUser(user: $user.wrappedValue)
+                presentationMode.wrappedValue.dismiss()
             }) {
                 Text("Save")
             }

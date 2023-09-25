@@ -52,7 +52,7 @@ struct ContentView: View {
             should probably happen at some point eventually maybe if we ever work on this more
             """)
     ]
-    
+
     let tags: [Tag] = [
         Tag(
             id: 1,
@@ -93,12 +93,22 @@ struct ContentView: View {
                         // This is hopefully not necessary with database
                         // look-ups
                         let notesTags = tags.filter { $0.notes.contains(note.id) }
-                        
+
                         NoteView(note: note, tags: notesTags)
                     }
                 }
             }
             .navigationTitle("Bespoke")
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    NavigationLink(destination: ProfileView()) {
+                        Image(systemName: "person.circle")
+                            .resizable()
+                            .frame(width: 30, height: 30)
+                            .foregroundColor(.blue)
+                    }
+                }
+            }
             .background(Color(red: 0.0, green: 0.1, blue: 0.0))
             .preferredColorScheme(.dark)
         }

@@ -1,4 +1,8 @@
-## bespoke
+# bespoke
+
+This app is currently in developement. Complimentary photo:
+
+![demo](assets/asset.png)
 
 ### Formatting Instructions (Up for debate)
 - [SwiftLint](https://github.com/Lickability/swift-best-practices/blob/f069c057de5aa01079e1b5e2355ac6e06106b030/Formatting.md)

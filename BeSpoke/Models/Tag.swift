@@ -8,7 +8,7 @@
 import Foundation
 
 struct Tag: Codable, Identifiable {
-    var id: Int64?
+    var id: String?
     var notes: [Int64?]
     var title: String
     var imagePath: String

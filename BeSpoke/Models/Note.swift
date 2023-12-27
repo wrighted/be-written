@@ -1,3 +1,10 @@
+//
+//  Note.swift
+//  bespoke
+//
+//  Created by Jared Webber on 2023-08-21.
+//
+
 import FirebaseFirestore
 import FirebaseFirestoreSwift
 import Foundation
@@ -5,7 +12,7 @@ import MapKit
 
 struct Note: Codable, Identifiable {
     @DocumentID var id: String? // filled by Firebase
-    var userId: String? // new field
+    var userId: String?
     var timestamp: Double
     var latitude: Double
     var longitude: Double

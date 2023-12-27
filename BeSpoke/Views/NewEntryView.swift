@@ -4,17 +4,17 @@
 //
 // Created by Ethan Wright on 2023-12-11
 //
-        
 
-import Foundation
 import FirebaseCore
 import FirebaseFirestore
+import Foundation
 import SwiftUI
 
 struct NewEntryView: View {
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+
     @State private var title = ""
     @State private var content = ""
-    @State private var submitted = false
 
     var body: some View {
         VStack {
@@ -26,31 +26,27 @@ struct NewEntryView: View {
                 .textFieldStyle(DefaultTextFieldStyle())
                 .padding()
 
-            NavigationLink(destination: ScrollingView(), isActive: $submitted) {
-                EmptyView()
-            }
-            .hidden()
-            
             Button("Submit") {
                 do {
                     let db = Firestore.firestore()
-                    
-                    // TODO: get current date and location
+
+                    // TODO: get current location
                     let note = Note(
-                        timestamp: Date().timeIntervalSince1970,
                         latitude: 37.7749,
                         longitude: -122.4194,
                         content: content)
-                    
+
                     try db.collection("notes").addDocument(from: note)
-                    submitted = true
+                    presentationMode.wrappedValue.dismiss()
                 }
                 catch {
-                     print("Error with encoding to firebase")
+                    print("Error with encoding to firebase")
                 }
             }
             .padding()
         }
         .padding()
+        .background(Color(red: 0.0, green: 0.1, blue: 0.0))
+        .preferredColorScheme(.dark)
     }
 }

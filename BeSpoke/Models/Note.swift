@@ -13,7 +13,7 @@ import MapKit
 struct Note: Codable, Identifiable {
     @DocumentID var id: String? // filled by Firebase
     var userId: String?
-    var timestamp: Double
+    var timestamp: TimeInterval
     var latitude: Double
     var longitude: Double
     var content: String

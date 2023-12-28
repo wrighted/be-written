@@ -42,26 +42,32 @@ struct ScrollingView: View {
     ]
 
     // Real code follows.
-
     @State private var activeUser: User = getActiveUser()
     @State private var notes: [Note] = []
+
+    @EnvironmentObject var authManager: AuthManager
 
     var body: some View {
         NavigationView {
             ScrollView {
                 QuoteView(quote: quote)
+
                 LazyVGrid(columns: [GridItem(.flexible())]) {
                     ForEach(notes) { note in
                         // TODO: tag matching
                         NoteView(note: note, tags: tags)
                     }
                 }
-                .onAppear(perform: fetchDocs)
+                .onAppear(perform: {
+                    FirebaseStore.shared.fetchNotes { fetchedNotes in
+                        notes = fetchedNotes
+                    }
+                })
             }
             .navigationTitle("Bespoke")
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    NavigationLink(destination: ProfileView(user: $activeUser)) {
+                    NavigationLink(destination: ProfileView(user: $activeUser).environmentObject(authManager)) {
                         Image(systemName: "person.circle")
                             .resizable()
                             .frame(width: 30, height: 30)
@@ -79,35 +85,6 @@ struct ScrollingView: View {
             }
             .background(Color(red: 0.0, green: 0.1, blue: 0.0))
             .preferredColorScheme(.dark)
-        }
-    }
-
-    // This should probably be moved to a Controller / DB layer
-    func fetchDocs() {
-        let db = Firestore.firestore()
-
-        db.collection("notes").getDocuments { querySnapshot, error in
-            if let error = error {
-                print("Error getting firebase documents: \(error)")
-
-            } else {
-                notes = querySnapshot?.documents.compactMap { document in
-                    let data = document.data()
-
-                    do {
-                        var note = try Firestore.Decoder().decode(Note.self, from: data)
-                        note.id = document.documentID
-
-                        return note
-
-                    } catch {
-                        print("Error decoding firebase document: \(error)")
-                        return nil
-                    }
-                } ?? []
-
-                notes.sort { $0.timestamp > $1.timestamp }
-            }
         }
     }
 }

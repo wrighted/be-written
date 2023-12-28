@@ -12,8 +12,8 @@ import Foundation
 struct User: Codable, Identifiable {
     // Seperate googleId and model id fields to avoid referencing google-specific info
     // outside of google interaction
-    @DocumentID var googleId: String?
-    var id: String?
+    @DocumentID var id: String?
+    var googleId: String?
     var firstName: String?
     var lastName: String?
     var email: String?
@@ -21,6 +21,7 @@ struct User: Codable, Identifiable {
     var username: String?
     var lastLogin: Double
     var accountCreated: Double
+    var currentProvider: String?
 
     enum CodingKeys: String, CodingKey {
         case googleId
@@ -32,6 +33,7 @@ struct User: Codable, Identifiable {
         case username
         case lastLogin
         case accountCreated
+        case currentProvider
     }
 
     init() {
@@ -43,6 +45,7 @@ struct User: Codable, Identifiable {
         username = ""
         lastLogin = Date().timeIntervalSince1970
         accountCreated = Date().timeIntervalSince1970
+        currentProvider = ""
     }
 
     init(from decoder: Decoder) throws {
@@ -55,6 +58,7 @@ struct User: Codable, Identifiable {
         username = try container.decode(String.self, forKey: .username)
         lastLogin = try container.decode(TimeInterval.self, forKey: .lastLogin)
         accountCreated = try container.decode(TimeInterval.self, forKey: .accountCreated)
+        currentProvider = try container.decode(String.self, forKey: .currentProvider)
 
         // Decode the DocumentID property using the Firestore decoder
         if let idContainer = try? decoder.container(keyedBy: CodingKeys.self),
@@ -74,6 +78,7 @@ struct User: Codable, Identifiable {
         try container.encode(username, forKey: .username)
         try container.encode(lastLogin, forKey: .lastLogin)
         try container.encode(accountCreated, forKey: .accountCreated)
+        try container.encode(currentProvider, forKey: .currentProvider)
 
         // Encode the DocumentID property using the Firestore encoder
         if id != nil {

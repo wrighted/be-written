@@ -26,10 +26,10 @@ struct NoteView: View {
     var body: some View {
         HeaderView(
             header: self.getFormattedDateString(),
-            tags: tags
+            tags: self.tags
         )
         CardView(
-            title: "Note",
+            title: "Note", // TODO: make dynamic?
             content: AnyView(
                 TileView(
                     coordinate: CLLocationCoordinate2D(latitude: self.note.latitude, longitude: self.note.longitude),

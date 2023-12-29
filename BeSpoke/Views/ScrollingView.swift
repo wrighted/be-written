@@ -4,19 +4,17 @@
 //
 // Created by Ethan Wright on 2023-12-11
 //
-        
 
-import Foundation
 import FirebaseFirestore
+import Foundation
 import SwiftUI
 
 struct ScrollingView: View {
-    
     // This is fake data. If you couldn't tell.
     let quote = Quote(
         title: "Quote of the day",
         quote: "Insert Knowledge here, perhaps why there's still white backgrounds.")
-    
+
     let tags: [Tag] = [
         Tag(
             notes: [1, 2],
@@ -38,33 +36,47 @@ struct ScrollingView: View {
             notes: [5],
             title: "mid",
             imagePath: "stop.fill"),
-        Tag(            notes: [],
+        Tag(notes: [],
             title: "best day",
             imagePath: "music.note")
     ]
-    
-    // Real code follows.
 
+    // Real code follows.
     @State private var activeUser: User = getActiveUser()
     @State private var notes: [Note] = []
+
+    @EnvironmentObject var authManager: AuthManager
 
     var body: some View {
         NavigationView {
             ScrollView {
                 QuoteView(quote: quote)
+
                 LazyVGrid(columns: [GridItem(.flexible())]) {
                     ForEach(notes) { note in
                         // TODO: tag matching
                         NoteView(note: note, tags: tags)
                     }
                 }
-                .onAppear(perform: fetchDocs)
+                .onAppear(perform: {
+                    FirebaseStore.shared.fetchNotes { fetchedNotes in
+                        notes = fetchedNotes
+                    }
+                })
             }
             .navigationTitle("Bespoke")
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    NavigationLink(destination: ProfileView(user: $activeUser)) {
+                    NavigationLink(destination: ProfileView(user: $activeUser).environmentObject(authManager)) {
                         Image(systemName: "person.circle")
+                            .resizable()
+                            .frame(width: 30, height: 30)
+                            .foregroundColor(.blue)
+                    }
+                }
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    NavigationLink(destination: NewEntryView()) {
+                        Image(systemName: "plus.circle")
                             .resizable()
                             .frame(width: 30, height: 30)
                             .foregroundColor(.blue)
@@ -73,32 +85,6 @@ struct ScrollingView: View {
             }
             .background(Color(red: 0.0, green: 0.1, blue: 0.0))
             .preferredColorScheme(.dark)
-        }
-    }
-    
-    func fetchDocs() {
-        let db = Firestore.firestore()
-        
-        db.collection("notes").getDocuments { querySnapshot, error in
-            if let error = error {
-                print("Error getting firebase documents: \(error)")
-                
-            } else {
-                notes = querySnapshot?.documents.compactMap { document in
-                    var data = document.data()
-                    
-                    do {
-                        var note = try Firestore.Decoder().decode(Note.self, from: data)
-                        note.id = document.documentID
-                        
-                        return note
-                        
-                    } catch {
-                        print("Error decoding firebase document: \(error)")
-                        return nil
-                    }
-                } ?? []
-            }
         }
     }
 }

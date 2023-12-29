@@ -12,7 +12,7 @@ import SwiftUI
 struct TileView: View {
     var coordinate: CLLocationCoordinate2D
     var content: String
-    var altText: String = "Some kinda information"
+    var altText: String = "Some kinda information" // TODO: remove?
 
     var body: some View {
         HStack {
